@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aung Htet Hlaing</title>
+
+    <meta name="description" content="Portflio Website">
+    <meta name="author" content="Aung Htet Hlaing">
+
+
+    <!-- facebook and Twitter integration -->
+    <meta property="og:title" content="Portflio">
+    <meta property="og:image" content="assets/img/icon-photo.jpg">
+    <meta property="og:url" content="...">
+    <meta property="og:site_name" content="Aung Htet Hlaing">
+    <meta property="og:description" content="Portflio Website">
+
+    <link rel="stylesheet" href="vendor/@fortawesome/css/all.min.css">
+    <link rel="stylesheet" href="vendor/animate_it/animate.min.css">
+    
+    <link rel="stylesheet" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" href="vendor/slick/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/icon-photo.jpg" type="image/x-icon">
+
+    <style>
+        .loader-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 2000;
+
+        }
+       .loader {
+            color: #006666;
+            font-size: 20px;
+            margin: 100px auto;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            position: relative;
+            text-indent: -9999em;
+            -webkit-animation: load4 1.3s infinite linear;
+            animation: load4 1.3s infinite linear;
+            -webkit-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        @-webkit-keyframes load4 {
+            0%,
+            100% {
+                box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+            }
+            12.5% {
+                box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+            }
+            25% {
+                box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+            }
+            37.5% {
+                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+            }
+            50% {
+                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+            }
+            62.5% {
+                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+            }
+            75% {
+                box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+            }
+            87.5% {
+                box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+            }
+        }
+        @keyframes load4 {
+            0%,
+            100% {
+                box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+            }
+            12.5% {
+                box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+            }
+            25% {
+                box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+            }
+            37.5% {
+                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+            }
+            50% {
+                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+            }
+            62.5% {
+                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+            }
+            75% {
+                box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+            }
+            87.5% {
+                box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader-container" style="z-index: 2000">
+        <div class="loader"></div>
+      </div>
+
+    <nav class="navbar wow animate__slideInDown">
+        <div class="navbar-brand">
+            <img src="assets/img/icon-photo.jpg" alt="My photo">
+            <a href="/">Aung</a>
+        </div>
+        <div class="navbar-toggler">
+            <span class="navbar-toggler-icon"></span>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="home" id="home">
+        <div class="home_text_container wow animate__lightSpeedInLeft">
+            <h1>Hello! <br> I'm <span class="name">Aung Htet Hlaing</span>  <br> I'm a <span class="job">Web Designer</span></h1>
+            <button class="home_contact_btn"><a href="#contact">Contact Me</a></button>
+        </div>
+        <div class="home_img_container wow animate__bounce">
+                
+                    <img src="assets/img/home-photo.jpg" alt="My photo">
+                
+        </div>
+        <div class="social-icons wow animate__fadeIn animate__delay-1s">
+            <a href="">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-github"></i>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about_title wow animate__bounceIn">
+            <h1 class="title">About Me</h1>
+            <span class="sub_title">My Introduction</span>
+        </div>
+        <div class="about_content">
+            <div class="about_img_container wow animate__bounce">
+                <img src="assets/img/about-photo.jpg" alt="My Photo">
+            </div>
+            <div class="about_text_container wow animate__lightSpeedInRight">
+                <h2>I'm Aung Htet Hlaing</h2>
+                <p>I'm a web designer from Myanmar. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est amet sint vitae totam, fugiat repellat, eveniet nulla, quae perspiciatis sequi minima unde facere eligendi aliquid esse placeat accusamus. Nihil, sit.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati commodi cumque rem odit doloribus
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="skills_title wow animate__bounceIn">
+            <h1 class="title">Skills</h1>
+            <span class="sub_title">What are my skills?</span>
+        </div>
+        <div class="skills_content">
+            <div class="skills_container">
+                <div class="skills_text wow animate__fadeIn">
+                    <h2>Professional Skills</h2>
+                    <p>
+                        I can create website with HTML 5, CSS 3, JavaScript, Bootstrap, React Technology.
+                        The following ranges are my skills rates.
+                    </p>
+                </div>
+               <div class="skills_range wow animate__lightSpeedInLeft">
+                    <div class="language_info">
+                        <div class="language">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML 5</span>
+                        </div>
+                        <span class="range">95%</span>
+                    </div>
+                    <meter   min="0" max="100" value="95">
+               </div>
+               <div class="skills_range wow animate__lightSpeedInLeft animate_delay_1">
+                <div class="language_info">
+                    <div class="language">
+                        <i class="fab fa-css3"></i>
+                        <span>CSS 3</span>
+                    </div>
+                    <span class="range">75%</span>
+                </div>
+                <meter   min="0" max="100" value="75">
+               </div>
+               <div class="skills_range wow animate__lightSpeedInLeft animate_delay_2">
+                <div class="language_info">
+                    <div class="language">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <span class="range">60%</span>
+                </div>
+                <meter   min="0" max="100" value="60">
+               </div>
+               <div class="skills_range wow animate__lightSpeedInLeft animate_delay_3">
+                <div class="language_info">
+                    <div class="language">
+                        <i class="fab fa-bootstrap"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                    <span class="range">80%</span>
+                </div>
+                <meter   min="0" max="100" value="80">
+               </div>
+              <div class="skills_range wow animate__lightSpeedInLeft animate_delay_4">
+                <div class="language_info">
+                    <div class="language">
+                        <i class="fab fa-react"></i>
+                        <span>React</span>
+                    </div>
+                    <span class="range">70%</span>
+                </div>
+                <meter   min="0" max="100" value="70">
+              </div>
+           
+            </div>
+            <div class="skills_img_container wow animate__bounce">
+                <img src="assets/img/skill-photo.png" alt="My Photo">
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="projects_title wow animate__bounceIn">
+            <h1 class="title">Projects</h1>
+            <span class="sub_title">There are my projects!</span>
+        </div>
+        <div class="projects_content">
+              <div class="slick">
+                <div class="project">
+                    <img src="assets/img/project-photo.png" alt="My Project Photo">
+                </div>
+                <div class="project">
+                <img src="assets/img/skill-photo.png" alt="My Project Photo">
+            </div>
+            <div class="project">
+                <img src="assets/img/project-photo.png" alt="My Project Photo">
+            </div>
+              </div>
+              
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact_title wow animate__bounceIn">
+            <h1 class="title">Contact</h1>
+            <span class="sub_title">You can contact with</span>
+        </div>
+        <div class="contact_content">
+            <div class="contact_form wow animate__fadeInDown">
+                <form action="">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name"> <br>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email"><br>
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" ></textarea><br>
+                    <button type="submit" value="Send">Send</button>
+                </form>
+            </div>
+            <div class="contact_info">
+                <div class="contact_text wow animate__fadeInDown">
+                    <div class="contact_text_title wow animate__fadeIn">
+                        <h2>Contact Informations</h2>
+                        <p>
+                            You can also cantact with the following informations. Thank you.
+                        </p>
+                    </div>
+                    <p class="wow animate__fadeIn animate_delay_1">
+                        <i class="fa fa-phone"></i>
+                        <span>01234567890</span>
+                    </p>
+                    <p class="wow animate__fadeIn animate_delay_2">
+                        <i class="fa fa-envelope"></i>
+                        <span>aung@gmail.com</span>
+                    </p >
+                    <p class="wow animate__fadeIn animate_delay_3">
+                        <i class="fa fa-map-marker-alt"></i>
+                        <span>one where in Myanmar</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h2>I'm Aung Htet Hlaing</h2>
+        <div class="footer-social-icons">
+            <a href="">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        <small>&copy; 2021 Copyright all right reserved</small>
+    </footer>
+
+
+    
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script src="vendor/way_point/jquery.waypoints.min.js"></script>
+    <script src="vendor/wow/wow.js"></script>
+    <script src="vendor/slick/slick.min.js"></script>
+
+    <script>
+        $("#home").waypoint(function(direction) {
+            if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#home']").addClass("active")
+             } else {
+                $(".nav-link[href='#home']").removeClass("active")
+             }
+          
+        },{
+            offset: '20%'
+        });
+        $("#about").waypoint(function(direction) {
+             if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#about']").addClass("active")
+             } else {
+                $(".nav-link[href='#about']").removeClass("active")
+                $(".nav-link[href='#home']").addClass("active")
+             }
+            
+        },{
+            offset: '20%'
+        });
+        $("#skills").waypoint(function(direction) {
+             if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#skills']").addClass("active")
+             } else {
+                $(".nav-link[href='#skills']").removeClass("active")
+                $(".nav-link[href='#about']").addClass("active")
+             }
+            
+        },{
+            offset: '20%'
+        });
+        $("#projects").waypoint(function(direction) {
+             if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#projects']").addClass("active")
+             } else {
+                $(".nav-link[href='#projects']").removeClass("active")
+                $(".nav-link[href='#skills']").addClass("active")
+             }
+            
+        },{
+            offset: '20%'
+        });
+        $("#contact").waypoint(function(direction) {
+             if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#contact']").addClass("active")
+             } else {
+                $(".nav-link[href='#contact']").removeClass("active")
+                $(".nav-link[href='#projects']").addClass("active")
+             }
+            
+        },{
+            offset: '20%'
+        });
+
+        wow = new WOW({
+        boxClass: "wow", // default
+        animateClass: "animate__animated",
+        offset: 0, // default
+        mobile: true, // default
+        live: true, // default
+      });
+      wow.init();
+
+      $(".slick").slick({
+          dots: true,
+        infinite: true,
+        fade:true,
+        cssEase: 'linear'
+      });
+
+      
+    $(window).on("load", function() {
+        $(".loader-container").fadeOut(500, function() {
+            $(this).remove();
+        });
+    })
+    </script>
+</body>
+</html>
