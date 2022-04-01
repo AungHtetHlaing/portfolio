@@ -22,99 +22,18 @@
     
     <link rel="stylesheet" href="vendor/slick/slick.css" />
     <link rel="stylesheet" href="vendor/slick/slick-theme.css" />
+    <link rel="stylesheet" href="vendor/image_hover/imagehover.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/icon-photo.jpg" type="image/x-icon">
-
-    <style>
-        .loader-container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            height: 100vh;
-            width: 100%;
-            position: fixed;
-            z-index: 2000;
-
-        }
-       .loader {
-            color: #006666;
-            font-size: 20px;
-            margin: 100px auto;
-            width: 1em;
-            height: 1em;
-            border-radius: 50%;
-            position: relative;
-            text-indent: -9999em;
-            -webkit-animation: load4 1.3s infinite linear;
-            animation: load4 1.3s infinite linear;
-            -webkit-transform: translateZ(0);
-            -ms-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-        @-webkit-keyframes load4 {
-            0%,
-            100% {
-                box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-            }
-            12.5% {
-                box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-            }
-            25% {
-                box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-            }
-            37.5% {
-                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-            }
-            50% {
-                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-            }
-            62.5% {
-                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-            }
-            75% {
-                box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-            }
-            87.5% {
-                box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-            }
-        }
-        @keyframes load4 {
-            0%,
-            100% {
-                box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-            }
-            12.5% {
-                box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-            }
-            25% {
-                box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-            }
-            37.5% {
-                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-            }
-            50% {
-                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-            }
-            62.5% {
-                box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-            }
-            75% {
-                box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-            }
-            87.5% {
-                box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-            }
-        }
-    </style>
 </head>
 <body>
+
 
     <div class="loader-container" style="z-index: 2000">
         <div class="loader"></div>
       </div>
 
-    <nav class="navbar wow animate__slideInDown">
+    <nav class="navbar animate__animated animate__slideInDown">
         <div class="navbar-brand">
             <img src="assets/img/icon-photo.jpg" alt="My photo">
             <a href="/">Aung</a>
@@ -126,15 +45,28 @@
             <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
             <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
             <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
             <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="#location" class="nav-link">Location</a></li>
+            <li class="nav-item"><button class="dark_mode"><i class="fa fa-moon"></i></button></li>
+            <li class="nav-item"><button class="color_switcher"><i class="fa fa-palette"></i></button>
+                <ul class="dropdown-color">
+                    <li><div class="green"></div></li>
+                    <li><div class="brown"></div></li>
+                    <li><div class="blue"></div></li>
+                    <li><div class="orange"></div></li>
+                    <li><div class="purple"></div></li>
+                </ul>
+            </li>
         </ul>
     </nav>
     
     <section class="home" id="home">
         <div class="home_text_container wow animate__lightSpeedInLeft">
             <h1>Hello! <br> I'm <span class="name">Aung Htet Hlaing</span>  <br> I'm a <span class="job">Web Designer</span></h1>
-            <button class="home_contact_btn"><a href="#contact">Contact Me</a></button>
+            <button class="home_contact_btn"><a href="#contact">Contact Me <i class="fa fa-envelope-square"></i> </a></button>
+            
         </div>
         <div class="home_img_container wow animate__bounce">
                 
@@ -159,6 +91,7 @@
             </a>
 
         </div>
+        
     </section>
 
     <section class="about" id="about">
@@ -175,8 +108,12 @@
                 <p>I'm a web designer from Myanmar. Lorem ipsum dolor sit amet consectetur adipisicing elit. Est amet sint vitae totam, fugiat repellat, eveniet nulla, quae perspiciatis sequi minima unde facere eligendi aliquid esse placeat accusamus. Nihil, sit.
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati commodi cumque rem odit doloribus
                 </p>
+                <button class="home_contact_btn"><a href="#">Download CV <i class="fa fa-download"></i> </a></button>
             </div>
         </div>
+        <a href="#home" class="upper-arrow">
+            <i class="fa fa-arrow-up"></i>
+        </a>
     </section>
 
     <section class="skills" id="skills">
@@ -246,7 +183,46 @@
            
             </div>
             <div class="skills_img_container wow animate__bounce">
-                <img src="assets/img/skill-photo.png" alt="My Photo">
+                <img src="assets/img/skill-photo.jpg" alt="My Photo">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="services_title wow animate__bounceIn">
+            <h1 class="title">Services</h1>
+            <span class="sub_title">I can serve these things For You</span>
+        </div>
+        <div class="services_content">
+            <div class="services_card wow animate__flipInX">
+                <h3>Frontend Developer</h3>
+                <div class="card_icon"><i class="fa fa-code"></i></div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sint.
+                </p>
+                <div class="card_btn">
+                    <button>view more</button>
+                </div>
+            </div>
+            <div class="services_card wow animate__flipInX">
+                <h3>Website Template</h3>
+                <div class="card_icon"><i class="fa fa-folder-open"></i></div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sint.
+                </p>
+                <div class="card_btn">
+                    <button>view more</button>
+                </div>
+            </div>
+            <div class="services_card wow animate__flipInX">
+                <h3>UI/UX Designer</h3>
+                <div class="card_icon"><i class="fa fa-laptop-code"></i></div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, sint.
+                </p>
+                <div class="card_btn">
+                    <button>view more</button>
+                </div>
             </div>
         </div>
     </section>
@@ -259,14 +235,46 @@
         <div class="projects_content">
               <div class="slick">
                 <div class="project">
-                    <img src="assets/img/project-photo.png" alt="My Project Photo">
+                    <!-- <img src="assets/img/project-photo.png" alt="My Project Photo"> -->
+                    <figure class="imghvr-shutter-out-vert">
+                        <img src="assets/img/project-photo.png" alt="My Project Photo">
+                        <figcaption>
+                            <h3>My Food Project</h3> 
+                            <p>
+                                This project is pizza shop website. I host this project at here.
+                            </p>
+                            <button class="btn_view">View</button>
+                        </figcaption>
+                    </figure>
                 </div>
                 <div class="project">
-                <img src="assets/img/skill-photo.png" alt="My Project Photo">
-            </div>
-            <div class="project">
-                <img src="assets/img/project-photo.png" alt="My Project Photo">
-            </div>
+                    <!-- <img src="assets/img/skill-photo.png" alt="My Project Photo"> -->
+                    <figure class="imghvr-shutter-out-vert">
+                        <img src="assets/img/skill-photo.jpg" alt="My Project Photo">
+                        <figcaption>
+                            <h3>My Food Project</h3> 
+                            <p>
+                                This project is pizza shop website. I host this project at here.
+                            </p>
+                            <button class="btn_view">View</button>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="project">
+                    <!-- <img src="assets/img/project-photo.png" alt="My Project Photo"> -->
+                    <figure class="imghvr-shutter-out-vert">
+                        <img src="assets/img/project-photo.png" alt="My Project Photo">
+                        <figcaption>
+                            <h3>My Food Project</h3> 
+                            <p>
+                                This project is pizza shop website. I host this project at here.
+                            </p>
+                            <button class="btn_view">View</button>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                
               </div>
               
         </div>
@@ -279,14 +287,29 @@
         </div>
         <div class="contact_content">
             <div class="contact_form wow animate__fadeInDown">
-                <form action="">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name"> <br>
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email"><br>
-                    <label for="message">Your Message</label>
-                    <textarea name="message" id="message" ></textarea><br>
-                    <button type="submit" value="Send">Send</button>
+                <form>
+                    <div class="input-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" onkeyup="validateName()">
+                        <span id="name_error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Your Phone</label>
+                        <input type="text" id="phone"  onkeyup="validatePhone()">
+                        <span id="phone_error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email"  onkeyup="validateEmail()">
+                        <span id="email_error"></span>
+                    </div>
+                    <div class="input-group">
+                        <label for="message">Your Message</label>
+                        <textarea name="message" id="message" onkeyup="validateMessage()"></textarea>
+                        <span id="message_error"></span>
+                    </div>
+                    <button type="submit" value="Send" onclick="return validateSubmit()">Send</button>
+                    <span id="submit_error"></span>
                 </form>
             </div>
             <div class="contact_info">
@@ -314,6 +337,16 @@
         </div>
     </section>
 
+    <section class="location" id="location">
+        <div class="location_title wow animate__bounceIn">
+            <h1 class="title">Location</h1>
+            <span class="sub_title">You can find me in there</span>
+        </div>
+        <div class="location_content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118427.17686084304!2d96.00578382434453!3d21.94034506297773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30cb6d23f0d27411%3A0x24146be01e4e5646!2z4YCZ4YCU4YC54YCQ4YCc4YCx4YC4!5e0!3m2!1smy!2smm!4v1628232803578!5m2!1smy!2smm" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </section>
+
     <footer class="footer">
         <h2>I'm Aung Htet Hlaing</h2>
         <div class="footer-social-icons">
@@ -336,7 +369,7 @@
         <small>&copy; 2021 Copyright all right reserved</small>
     </footer>
 
-
+    
     
     <script src="assets/js/app.js"></script>
     <script src="assets/js/jquery.js"></script>
@@ -359,10 +392,12 @@
         $("#about").waypoint(function(direction) {
              if(direction == 'down') {
                 $(".nav-link").removeClass("active");
-                $(".nav-link[href='#about']").addClass("active")
+                $(".nav-link[href='#about']").addClass("active");
+                $(".upper-arrow").css('display', 'inline');
              } else {
-                $(".nav-link[href='#about']").removeClass("active")
-                $(".nav-link[href='#home']").addClass("active")
+                $(".nav-link[href='#about']").removeClass("active");
+                $(".nav-link[href='#home']").addClass("active");
+                $(".upper-arrow").css('display', 'none')
              }
             
         },{
@@ -399,6 +434,18 @@
              } else {
                 $(".nav-link[href='#contact']").removeClass("active")
                 $(".nav-link[href='#projects']").addClass("active")
+             }
+            
+        },{
+            offset: '20%'
+        });
+        $("#location").waypoint(function(direction) {
+             if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#location']").addClass("active")
+             } else {
+                $(".nav-link[href='#location']").removeClass("active")
+                $(".nav-link[href='#contact']").addClass("active")
              }
             
         },{
