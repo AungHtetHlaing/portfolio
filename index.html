@@ -415,13 +415,25 @@
         },{
             offset: '20%'
         });
+        $("#services").waypoint(function(direction) {
+             if(direction == 'down') {
+                $(".nav-link").removeClass("active");
+                $(".nav-link[href='#services']").addClass("active")
+             } else {
+                $(".nav-link[href='#services']").removeClass("active")
+                $(".nav-link[href='#skills']").addClass("active")
+             }
+            
+        },{
+            offset: '20%'
+        });
         $("#projects").waypoint(function(direction) {
              if(direction == 'down') {
                 $(".nav-link").removeClass("active");
                 $(".nav-link[href='#projects']").addClass("active")
              } else {
                 $(".nav-link[href='#projects']").removeClass("active")
-                $(".nav-link[href='#skills']").addClass("active")
+                $(".nav-link[href='#services']").addClass("active")
              }
             
         },{
