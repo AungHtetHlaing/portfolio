@@ -64,7 +64,7 @@
     
     <section class="home" id="home">
         <div class="home_text_container wow animate__lightSpeedInLeft">
-            <h1>Hello! <br> I'm <span class="name">Aung Htet Hlaing</span>  <br> I'm a <span class="job">Web Designer</span></h1>
+            <h1>Hello! <br> I'm <span class="name">Aung Htet Hlaing</span>   <br> I'm a <span class="job" id="job"></span></h1>
             <button class="home_contact_btn"><a href="#contact">Contact Me <i class="fa fa-envelope-square"></i> </a></button>
             
         </div>
@@ -376,6 +376,7 @@
     <script src="vendor/way_point/jquery.waypoints.min.js"></script>
     <script src="vendor/wow/wow.js"></script>
     <script src="vendor/slick/slick.min.js"></script>
+    <script src="vendor/typedjs/type.min.js"></script>
 
     <script>
         $("#home").waypoint(function(direction) {
@@ -485,7 +486,22 @@
         $(".loader-container").fadeOut(500, function() {
             $(this).remove();
         });
-    })
+    });
+
+    // typed js
+    let typed1 = new Typed('#job', {
+        strings: ["Web Designer", "Web Developer"],
+        typeSpeed: 75,
+        backSpeed: 25,
+        loop: true,
+        backDelay : 1500,
+        startDelay: 100,
+        cursorChar: "_",
+        
+
+    });
+
+    
     </script>
 </body>
 </html>
