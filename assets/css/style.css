@@ -185,6 +185,7 @@ body.purple.dark {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 60px;
   z-index: 2;
 }
 
@@ -195,17 +196,17 @@ body.purple.dark {
 }
 
 .navbar-brand img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-right: 12px;
   border: 1px solid var(--important-color);
 }
 
 .navbar-brand a {
   text-decoration: none;
   color: var(--text-color-light);
-  font-size: 1.5rem;
+  font-size: 26px;
   font-weight: 900;
 }
 
@@ -271,6 +272,7 @@ body.purple.dark {
   text-decoration: none;
   color: var(--text-color-dark);
   font-weight: bold;
+  font-size: 18px;
 }
 
 .dark_mode,
@@ -427,9 +429,10 @@ body.purple.dark {
 
 .home_contact_btn {
   background-color: var(--important-color);
-  padding: 10px 25px;
+  padding: 12px 20px;
   border: none;
   border-radius: 10px;
+  font-size: 16px;
 }
 
 .home_contact_btn a {
@@ -527,7 +530,7 @@ body.purple.dark {
 /* about */
 .about {
   height: 100vh;
-  padding-top: 30px;
+  padding-top: 40px;
   box-sizing: border-box;
 }
 
@@ -649,7 +652,7 @@ body.purple.dark {
 .skills {
   box-sizing: border-box;
   height: 100vh;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .skills_title {
@@ -690,7 +693,7 @@ body.purple.dark {
 }
 
 .skills_range:hover {
-  transform: scale(1.01,1.01);
+  transform: scale(1.01, 1.01);
 }
 
 .skills_range meter {
@@ -729,6 +732,8 @@ body.purple.dark {
 }
 .skills_img_container img {
   width: 500px;
+  height: 500px;
+
   border: 1px solid var(--important-color);
   border-radius: 10px;
 }
@@ -800,7 +805,7 @@ body.purple.dark {
 .services {
   box-sizing: border-box;
   height: 100vh;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .services_title {
@@ -849,7 +854,7 @@ body.purple.dark {
 }
 
 .services_card p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .card_btn {
@@ -887,7 +892,7 @@ body.purple.dark {
 .projects {
   box-sizing: border-box;
   height: 100vh;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .projects_title {
@@ -962,7 +967,7 @@ body.purple.dark {
 .contact {
   box-sizing: border-box;
   height: 100vh;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .contact_title {
@@ -1034,11 +1039,12 @@ textarea:focus {
   outline: none;
 }
 .contact_form button {
-  padding: 8px 30px;
+  padding: 10px 30px;
   border: none;
   background-color: var(--important-color);
   color: var(--text-color-light);
   border-radius: 6px;
+  font-size: 14px;
   float: right;
 }
 .contact_info {
@@ -1099,7 +1105,7 @@ textarea:focus {
 .location {
   box-sizing: border-box;
   height: 100vh;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .location_title {
